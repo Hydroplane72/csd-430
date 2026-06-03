@@ -1,0 +1,100 @@
+/*
+ Name: Matthew Rozendaal
+ Date: 2026-06-03
+ Assignment: Module 2 - Dynamic HTML Page Using JSP Scriptlets
+ Purpose: Style the dynamic books JSP page using an external stylesheet.
+ Source Note: CSS formatting assisted by GitHub Copilot.
+*/
+
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #1f2933;
+    --muted: #52606d;
+    --accent: #0b7285;
+    --accent-soft: #dff3f7;
+    --line: #d9e2ec;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+    color: var(--text);
+}
+
+.page-wrap {
+    max-width: 980px;
+    margin: 2rem auto;
+    padding: 0 1rem 2rem;
+}
+
+.page-header {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--accent);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.page-header h1 {
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+}
+
+.description-card,
+.category-section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.description-card h2,
+.category-section h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+th,
+td {
+    border: 1px solid var(--line);
+    padding: 0.65rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--accent-soft);
+    color: #093640;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fbfc;
+}
+
+@media (max-width: 720px) {
+    .page-wrap {
+        margin: 1rem auto;
+    }
+
+    th,
+    td {
+        font-size: 0.95rem;
+    }
+}
