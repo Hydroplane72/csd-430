@@ -1,0 +1,13 @@
+Hello,
+
+
+
+My name is Matthew Rozendaal. I am a software developer for a life insurance company. I obtained my Associate's degree nearly 10 years ago and had been developing software well before graduating with that degree. I am a Full-Stack Developer in the industry. However, I lean more heavily on backend work than front-end work. 
+
+
+
+The first half of my career was focused primarily on backend development. I mainly worked on various database types and assisted in converting those database structures into different formats required by our partners. I have had the pleasure of working with the following databases in the past: MySQL, MSSQL, MongoDB, HFSQL, Firebase, MS Access, Flat-File databases, SQLite, dBase, Sybase, and ElevateDB. Most of that work involved knowing how to connect to the database, extract the data, and then translate/clean it so others could use it. Another portion of the first half of my career was integrating various accounting Systems to enable businesses to use their preferred point-of-sale software while still maintaining their accounting in systems like QuickBooks. This work provided me with experience in Visual Basic .NET, VBA, VB6, and general API work. 
+
+
+
+After a time, I was no longer able to advance in my career and switched to the job I currently have. I am considered more than just a Software Developer. I am also a part of the Architecture Center of Excellence and the Technology Innovations Center of Excellence at my workplace. Part of those responsibilities is to help guide the company in creating a functional, scalable, and reliable environment across its systems. My current job has allowed me to expand my knowledge further in various ways. I have professional experience with C#, YAML, PowerShell, Terraform, Azure services, Microsoft Active Directory, NServiceBus, Power BI, Microsoft Dynamics, and many other Languages and Applications.
