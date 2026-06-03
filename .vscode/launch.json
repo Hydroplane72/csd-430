@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "F5: Debug JSP on Tomcat",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 8000,
+            "preLaunchTask": "Start Tomcat (JPDA)",
+            "postDebugTask": "Stop Tomcat"
+        }
+    ]
+}

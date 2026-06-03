@@ -1,0 +1,47 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Deploy JSP to Tomcat ROOT",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\deploy-jsp.ps1"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Start Tomcat (JPDA)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\start-tomcat-jpda.ps1"
+            ],
+            "dependsOn": [
+                "Deploy JSP to Tomcat ROOT"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Stop Tomcat",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\stop-tomcat.ps1"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
