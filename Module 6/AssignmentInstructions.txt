@@ -1,0 +1,21 @@
+Assignment:
+
+
+
+After completing the 5.2 section of this assignment, you will continue setting your database permissions to allow Java access using the JavaBean. You set this permission for the JavaBean, but not through the bean. When you submit your application for this assignment, include your Java code so your instructor will be able to create, populate, and delete the same-titled table. Your instructor will use the same database and table titles for your code to execute correctly.
+
+
+
+For this week’s project assignment, you will gather data from a database (db), using a JavaBean, to be displayed. The form will initialize, displaying an HTML Dropdown Menu holding a listing of all the key values held in the db. The user will then be able to select a single unique key and submit the form. The returning JSP will display the data record holding the selected key value. The data is then to be displayed in a table format, having all fields in a separate table column along with field titles in the ‘thead’ section of the table. The input for the user to select from must be inside a JSP page. The display page may be in the same JSP page or in a separate JSP page.
+
+
+
+For this assignment, you will ensure you:
+
+Document your code
+Use Scriptlets for holding Java code
+All HTML tags will be outside of Java Scriptlets
+Display data in an HTML table format
+Including other display items such as field and recode descriptions, title, and overall data description.
+Display data will have a minimum of 5 fields.
+Submit all project files, including source code.

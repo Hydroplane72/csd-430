@@ -1,0 +1,10 @@
+For the discussion, we will look at different types of Enterprise Java Beans EJBs. Select one of the topics below. Then, answer the “what,” “how,” and “why” questions below about your selected topic. Provide a simple code or code snippet example to further illustrate your thoughts.
+
+Session Beans
+Entity
+Message-Driven Beans
+'What', 'How', and 'Why'
+
+What: What are you writing about? Give the audience a brief overview of the topic by providing them with foundational information (history, background information, etc.).
+How: How is the information relevant? Apply personal knowledge (this can be through research or actual practiced knowledge) to build trust with the audience.
+Why: Justify your position and/or course of action. The audience needs proof that the information you are presenting is creditable and actionable.

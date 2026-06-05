@@ -1,0 +1,31 @@
+Assignment:
+
+
+
+Please read through the instructions for both assignments in these modules before beginning this assignment. 
+
+
+
+Note: Please do not submit more than the project files required for Modules 5 & 6. Doing so will cause you to lose 30% of your grade on this module.
+
+
+
+The first step for this project assignment will be to create your database using MySQL. The database will be titled CSD430. Then you will create and populate your table titled data with a minimum of 5 fields, one being a primary key. Insert a minimum of 10 records. For this assignment, you will submit screenshots displaying the completion of creating and populating the table, along with the records held in the table. Lastly, include an SQL file with the code needed to create and populate the table.
+
+
+
+Example: larry_movies_data
+
+Select one of the following topics for this project's database:
+
+Library
+Movies
+States
+For the database, you will:
+
+Title the database CSD430.
+The username will be ‘student1’.
+The password will be ‘pass’.
+The table name will be <your_first_name><data topic>data.
+Include the PHP table files <your_first_name>createTable.php, <your_first_name>populateTable.php, <your_first_name>dropTable.php.
+For each module, you are to include an updated index.jsp to hold links to all module’s CRUD deliverables.

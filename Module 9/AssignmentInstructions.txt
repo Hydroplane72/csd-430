@@ -1,0 +1,21 @@
+Assignment:
+
+
+
+Note: Please remember that for this module, you are to submit all files for Modules 5 & 6, Module 7, Module 8, and Module 9.
+
+
+
+For this module, you will continue to use the same database (db) and table as in the previous module. For this week’s assignment, you will create a form that displays all records in a table format. The form will also hold an HTML select dropdown holding all key fields. The user will then select the key for the record to be deleted. When submitted, the return will display all remaining fields left in the same table format. The return page will also hold the HTML select dropdown holding all remaining keys. The user may then select another key to delete another record. When and if all records are deleted, the returning page will show an empty table still holding the <thaed> row. For this assignment, you may use more than one JSP. Remember, this is Project Part 4, not a new project.
+
+
+
+For this assignment, you will ensure you:
+
+Document your code.
+Use Scriptlets for holding Java code.
+All HTML tags will be outside of Java Scriptlets.
+Display data in an HTML table format.
+Include other display items such as field and recode descriptions, title, and overall data description.
+Display data will have a minimum of 5 fields.
+Submit all project files, including source code.

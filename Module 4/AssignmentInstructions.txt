@@ -1,0 +1,13 @@
+For this week’s assignment, you will create a JavaBean to hold some data. You will then use a JSP page to gather data from the JavaBean and display it in a nicely formatted display. For the JavaBean, use the data from your Module 2 Java Scriptlet - Data Display assignment.
+
+
+
+For this assignment, you will need to:
+
+Document your code
+Use Scriptlets for holding Java code
+All HTML tags will be outside of Java Scriptlets
+Display data in an HTML table format
+Including other display items such as field and recode descriptions, title, and overall data description.
+Ensure the JavaBean implements java.io.Serializable
+Data input will have a minimum of 5 fields.

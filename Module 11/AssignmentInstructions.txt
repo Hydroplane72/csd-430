@@ -1,0 +1,5 @@
+Write a (700-word minimum) paper on the topic of Coding Standards. For this assignment, you are to address different coding standards in the corporate programming world. Write about what they are, how they are used, and their importance of them.
+
+
+
+As you will write about a topic on the Discussion Board, ensure you cover for this paper the What, How, and Why. Remember to correctly cite your resources. Write the paper in your own words, correctly quoting all you use in your paper, keeping the amount quoted at 5 – 10%. Do not have any copied material that is not correctly cited. Be sure to provide some simple coding segments outside of your paper.
