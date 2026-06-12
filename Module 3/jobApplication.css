@@ -1,0 +1,128 @@
+/*
+Name: Matthew Rozendaal
+Date: 2026-06-11
+Assignment: Module 3 - Shared Job Application Styles
+Purpose: Provide one common stylesheet for both JSP pages in Module 3.
+Source Credit: Style foundation created by me; refined with AI assistance (GitHub Copilot).
+*/
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 24px;
+    background: #f8fafc;
+    color: #111827;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container {
+    max-width: 760px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #0f172a;
+}
+
+p.description {
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.field-group {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.field-help {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #9ca3af;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+button {
+    background: #0ea5e9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0284c7;
+}
+
+.note,
+.meta {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #9ca3af;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #e2e8f0;
+    width: 28%;
+}
+
+.warning {
+    border: 1px solid #f59e0b;
+    background: #fffbeb;
+    color: #92400e;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+a {
+    color: #0369a1;
+}
