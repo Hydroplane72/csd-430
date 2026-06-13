@@ -19,6 +19,12 @@ $deployExtensions = @(
     ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"
 )
 
+$javaSourceFiles = Get-ChildItem -Path $moduleFolders.FullName -File -Recurse |
+    Where-Object { $_.Extension.ToLowerInvariant() -eq ".java" }
+
+$webInfClasses = Join-Path $root "WEB-INF\classes"
+New-Item -ItemType Directory -Path $webInfClasses -Force | Out-Null
+
 $filesToDeploy = foreach ($module in $moduleFolders) {
     Get-ChildItem -Path $module.FullName -File -Recurse |
         Where-Object { $deployExtensions -contains $_.Extension.ToLowerInvariant() }
@@ -43,6 +49,28 @@ foreach ($file in $filesToDeploy) {
     Copy-Item -LiteralPath $file.FullName -Destination $destination -Force
     Write-Output "Deploy succeeded: $($file.FullName) -> $destination"
     $deployedCount++
+}
+
+if ($javaSourceFiles) {
+    $javaCompiler = Get-Command javac -ErrorAction SilentlyContinue
+    if (-not $javaCompiler) {
+        throw "javac was not found on PATH, so Java source files could not be compiled."
+    }
+
+    $javaArguments = @(
+        "-d", $webInfClasses,
+        "-classpath", $webInfClasses,
+        "-encoding", "UTF-8"
+    ) + @($javaSourceFiles.FullName)
+
+    & $javaCompiler.Source @javaArguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "Java source compilation failed."
+    }
+
+    foreach ($sourceFile in $javaSourceFiles) {
+        Write-Output "Compiled Java source: $($sourceFile.FullName) -> $webInfClasses"
+    }
 }
 
 Write-Output "Deployment complete. Files deployed: $deployedCount"
