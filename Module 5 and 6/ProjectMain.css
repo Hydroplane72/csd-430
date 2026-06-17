@@ -1,0 +1,158 @@
+/*
+Name: Matthew Rozendaal
+Date: 2026-06-16
+Assignment: Module 5 and 6 - Library Book Project
+Purpose: Shared CSS styling for Library Book Selector and Display pages
+*/
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Narrow container for selector page */
+.container-narrow {
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+.form-group {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Message Styles */
+.notice {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Description Box Styles */
+.description {
+    background-color: #e8f4f8;
+    border-left: 4px solid #4CAF50;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* Navigation Links */
+.nav-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav-links a {
+    display: inline-block;
+    margin: 5px 10px;
+    color: #007BFF;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #007BFF;
+    color: white;
+}

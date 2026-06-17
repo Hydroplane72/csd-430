@@ -16,7 +16,8 @@ if (-not $moduleFolders) {
 
 $deployExtensions = @(
     ".jsp", ".css", ".js", ".html", ".htm",
-    ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"
+    ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg",
+    ".sql"
 )
 
 $javaSourceFiles = Get-ChildItem -Path $moduleFolders.FullName -File -Recurse |
