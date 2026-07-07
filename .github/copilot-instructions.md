@@ -18,6 +18,8 @@ These instructions apply to this repository.
 - Keep business logic out of JSP pages.
 - Keep markup valid and easy for beginners to follow.
 - Preserve compatibility with a standard Tomcat setup.
+- For all CRUD modules, use a JavaBean to connect to and retrieve data from the database.
+- Do not use a JSP page for direct database connections.
 
 ## Safe Change Rules
 - Do not modify deployment or Tomcat scripts unless asked.
