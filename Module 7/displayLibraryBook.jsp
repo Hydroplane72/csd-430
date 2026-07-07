@@ -23,6 +23,8 @@ Purpose: Use JavaBean methods to insert a new record and display all Library rec
 %>
 <%
     boolean hasFormData = request.getParameter("name") != null;
+    String searchTerm = safeTrim(request.getParameter("searchTerm"));
+    String searchTermLower = searchTerm.toLowerCase();
     String message = "";
     List<LibraryBookBean> books = null;
 
@@ -94,6 +96,14 @@ Purpose: Use JavaBean methods to insert a new record and display all Library rec
         </div>
     <% } %>
 
+    <form action="displayLibraryBook.jsp" method="get">
+        <div class="form-group">
+            <label for="searchTerm">Search Books (All Columns)</label>
+            <input id="searchTerm" name="searchTerm" type="text" value="<%= htmlEscape(searchTerm) %>" placeholder="Enter any value to filter table rows" />
+        </div>
+        <button type="submit">Search</button>
+    </form>
+
     <table>
         <thead>
         <tr>
@@ -110,7 +120,36 @@ Purpose: Use JavaBean methods to insert a new record and display all Library rec
         </thead>
         <tbody>
         <% if (books != null && !books.isEmpty()) { %>
-            <% for (LibraryBookBean book : books) { %>
+            <%
+                int displayedRows = 0;
+                for (LibraryBookBean book : books) {
+                    String idValue = String.valueOf(book.getId());
+                    String nameValue = book.getName() == null ? "" : book.getName();
+                    String summaryValue = book.getSummary() == null ? "" : book.getSummary();
+                    String authorValue = book.getAuthor() == null ? "" : book.getAuthor();
+                    String genreValue = book.getGenre() == null ? "" : book.getGenre();
+                    String checkedOutValue = book.isCheckedOut() ? "yes" : "no";
+                    String lastCheckedOutValue = book.getLastCheckedOut() == null ? "" : book.getLastCheckedOut();
+                    String conditionValue = book.getCondition() == null ? "" : book.getCondition();
+                    String isbnValue = book.getIsbn() == null ? "" : book.getIsbn();
+
+                    boolean matchesSearch = searchTermLower.isEmpty()
+                            || idValue.toLowerCase().contains(searchTermLower)
+                            || nameValue.toLowerCase().contains(searchTermLower)
+                            || summaryValue.toLowerCase().contains(searchTermLower)
+                            || authorValue.toLowerCase().contains(searchTermLower)
+                            || genreValue.toLowerCase().contains(searchTermLower)
+                            || checkedOutValue.contains(searchTermLower)
+                            || lastCheckedOutValue.toLowerCase().contains(searchTermLower)
+                            || conditionValue.toLowerCase().contains(searchTermLower)
+                            || isbnValue.toLowerCase().contains(searchTermLower);
+
+                    if (!matchesSearch) {
+                        continue;
+                    }
+
+                    displayedRows++;
+            %>
                 <tr>
                     <td><%= book.getId() %></td>
                     <td><%= htmlEscape(book.getName()) %></td>
@@ -122,7 +161,16 @@ Purpose: Use JavaBean methods to insert a new record and display all Library rec
                     <td><%= htmlEscape(book.getCondition()) %></td>
                     <td><%= htmlEscape(book.getIsbn()) %></td>
                 </tr>
-            <% } %>
+            <%
+                }
+                if (displayedRows == 0) {
+            %>
+                <tr>
+                    <td colspan="9">No Library records matched the search criteria.</td>
+                </tr>
+            <%
+                }
+            %>
         <% } else { %>
                 <tr>
                     <td colspan="9">No Library records are available yet.</td>

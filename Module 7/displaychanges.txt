@@ -1,0 +1,44 @@
+Module 7 UI Decision Differences Compared to Module 5 and 6
+Date: 2026-07-06
+NOTE: I had AI do a comparison between the 2 modules since I changed so much between the 2 modules. 
+I felt like it was needed to help explain why I made such drastic changes.
+My main reason for doing this is to set it up for the future to be easier to do other CRUD operations for these books.
+I also think it is a better user experience to be able to see a list of the books and then search compared to searchng through a list box. 
+(I did list box in the 5-6 module because it seemed like a requirement based on how it was worded.)
+
+1) Overall UX Flow
+- Module 5 and 6 uses a SELECT-and-view flow: pick one existing book, then show one record.
+- Module 7 uses a CREATE-and-browse flow: enter a full new record, submit, then view all records.
+
+2) Index Page Messaging and Links
+- Module 5 and 6 labels the feature as a selector/display experience.
+- Module 7 labels the feature as Project Part 2 with add-record + display-all behavior.
+- Link text in Module 7 is more task-specific:
+  - "Add Library Record Form"
+  - "Display All Library Records"
+
+3) Data Entry UI (libraryBookSelector.jsp)
+- Module 5 and 6 has one dropdown field (book ID/name) for selecting an existing row.
+- Module 7 replaced that with a full input form for all record fields:
+  - Name, Summary, Author, Genre, Checked Out, Last Checked Out, Condition, ISBN
+- Module 7 adds a field-description block to explain record contents.
+- Submit button changed from viewing a selected row to creating a row and showing table results.
+
+4) Display UI (displayLibraryBook.jsp)
+- Module 5 and 6 displays only one selected row.
+- Module 7 displays all rows in a table by default.
+- Module 7 includes search UI to filter rows using one search term across all table columns.
+- Module 7 provides feedback for additional states:
+  - Record inserted successfully
+  - No records matched search criteria
+  - No records available
+
+5) Navigation Decisions
+- Module 5 and 6 nav emphasizes "Choose Another Book".
+- Module 7 nav emphasizes iterative data entry and review:
+  - "Add Another Record"
+  - "View All Records"
+
+6) Information Architecture
+- Module 5 and 6 is optimized for lookup of a single existing record.
+- Module 7 is optimized for CRUD-style growth and review of the dataset, with broader discovery via search.
