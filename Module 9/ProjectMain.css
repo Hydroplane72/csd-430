@@ -165,7 +165,12 @@ tbody tr:hover {
 
 /* Row action controls */
 .inline-form {
+    display: inline-block;
     margin: 0;
+}
+
+.inline-form+.inline-form {
+    margin-left: 8px;
 }
 
 .row-action {
@@ -173,6 +178,14 @@ tbody tr:hover {
     margin-top: 0;
     padding: 8px 14px;
     font-size: 14px;
+}
+
+.delete-action {
+    background-color: #d32f2f;
+}
+
+.delete-action:hover {
+    background-color: #b71c1c;
 }
 
 /* Modal edit popup */

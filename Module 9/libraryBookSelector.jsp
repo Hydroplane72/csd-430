@@ -11,7 +11,8 @@ Purpose: Collect user input for adding a new Library record.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Add Record Form</title>
-    <link rel="stylesheet" href="ProjectMain.css" />
+    <% String projectMainCssVersion = String.valueOf(new java.io.File(application.getRealPath("/ProjectMain.css")).lastModified()); %>
+    <link rel="stylesheet" href="ProjectMain.css?v=<%= projectMainCssVersion %>" />
 </head>
 <body>
 <div class="container container-narrow">

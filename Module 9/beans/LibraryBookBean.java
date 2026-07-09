@@ -10,9 +10,9 @@ import java.util.List;
 
 /*
  Name: Matthew Rozendaal
- Date: 2026-06-16
- Assignment: Module 5 and 6 - Library JavaBean
- Purpose: Hold one Library book record for JSP display.
+ Date: 2026-07-08
+ Assignment: Module 9 - Library Record Bean
+ Purpose: Hold one Library book record and run database CRUD operations for JSP display.
  */
 public class LibraryBookBean implements Serializable {
 
@@ -161,6 +161,15 @@ public class LibraryBookBean implements Serializable {
             updateStatement.setInt(9, getId());
 
             return updateStatement.executeUpdate();
+        }
+    }
+
+    public int deleteRecord() throws SQLException {
+        String deleteSql = "DELETE FROM matthew_library_data WHERE ID = ?";
+
+        try (java.sql.Connection connection = LibraryDbConfig.getConnection(); PreparedStatement deleteStatement = connection.prepareStatement(deleteSql)) {
+            deleteStatement.setInt(1, getId());
+            return deleteStatement.executeUpdate();
         }
     }
 

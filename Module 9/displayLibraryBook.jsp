@@ -1,8 +1,8 @@
 <%--
 Name: Matthew Rozendaal
-Date: 2026-07-07
-Assignment: Module 8 - Library Edit and Display
-Purpose: Insert and update Library records through JavaBean methods, then display all records.
+Date: 2026-07-08
+Assignment: Module 9 - Library Delete Record Display
+Purpose: Insert, update, and delete Library records through JavaBean methods, then display all records.
 --%>
 <%@ page import="java.util.List,beans.LibraryBookBean" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <jsp:useBean id="libraryBookBean" class="beans.LibraryBookBean" scope="page" />
@@ -54,6 +54,8 @@ Purpose: Insert and update Library records through JavaBean methods, then displa
 
     if ("updated".equalsIgnoreCase(status)) {
         message = "Library record was updated successfully.";
+    } else if ("deleted".equalsIgnoreCase(status)) {
+        message = "Library record was deleted successfully.";
     }
 
     if ("add".equalsIgnoreCase(action)) {
@@ -155,6 +157,27 @@ Purpose: Insert and update Library records through JavaBean methods, then displa
                 message = "Database error: " + exception.getMessage();
             }
         }
+    } else if ("deleteRecord".equalsIgnoreCase(action)) {
+        if (editId <= 0) {
+            message = "Please select a valid record to delete.";
+        } else {
+            try {
+                libraryBookBean.setId(editId);
+                int rowsDeleted = libraryBookBean.deleteRecord();
+                if (rowsDeleted > 0) {
+                    String redirectUrl = "displayLibraryBook.jsp?status=deleted";
+                    if (!searchTerm.isEmpty()) {
+                        redirectUrl += "&searchTerm=" + urlEncode(searchTerm);
+                    }
+                    response.sendRedirect(redirectUrl);
+                    return;
+                } else {
+                    message = "No record was deleted. Please try again.";
+                }
+            } catch (Exception exception) {
+                message = "Database error: " + exception.getMessage();
+            }
+        }
     }
 
     try {
@@ -176,7 +199,8 @@ Purpose: Insert and update Library records through JavaBean methods, then displa
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Records Table</title>
-    <link rel="stylesheet" href="ProjectMain.css" />
+    <% String projectMainCssVersion = String.valueOf(new java.io.File(application.getRealPath("/ProjectMain.css")).lastModified()); %>
+    <link rel="stylesheet" href="ProjectMain.css?v=<%= projectMainCssVersion %>" />
 </head>
 <body>
 <div class="container">
@@ -267,6 +291,12 @@ Purpose: Insert and update Library records through JavaBean methods, then displa
                             <input type="hidden" name="searchTerm" value="<%= htmlEscape(searchTerm) %>" />
                             <button type="submit" class="row-action">Edit</button>
                         </form>
+                        <form action="displayLibraryBook.jsp" method="post" class="inline-form">
+                            <input type="hidden" name="action" value="deleteRecord" />
+                            <input type="hidden" name="id" value="<%= book.getId() %>" />
+                            <input type="hidden" name="searchTerm" value="<%= htmlEscape(searchTerm) %>" />
+                            <button type="submit" class="row-action delete-action" onclick="return confirm('Delete this record?');">Delete</button>
+                        </form>
                     </td>
                 </tr>
             <%
@@ -280,9 +310,7 @@ Purpose: Insert and update Library records through JavaBean methods, then displa
                 }
             %>
         <% } else { %>
-                <tr>
-                    <td colspan="10">No Library records are available yet.</td>
-                </tr>
+            
         <% } %>
         </tbody>
     </table>
